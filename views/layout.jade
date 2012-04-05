@@ -1,0 +1,19 @@
+!!!
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/bootstrap.spacelab.css')
+
+    body
+        div.topbar.navbar.navbar-fixed-top
+            div.fill
+                div.container
+                    a(href='/').brand #{title}
+
+                    form.navbar-search.pull-left(action="/search")(method="POST")
+                            input.search-query.span2(name="search")(placeholder="#{search_placeholder}")
+
+                            
+    div.container!= body
+        footer
+            p &copy; AwesomeTabs 2012. AwesomeTabs does not condone or claim ownership to the content of any tabs displayed.

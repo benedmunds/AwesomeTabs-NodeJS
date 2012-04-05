@@ -1,0 +1,12 @@
+div.hero-unit
+    h1 Finally!
+    h1 a tab site that doesn't suck
+
+div.content
+    div.row
+        div.span12
+            h2 Popular Tabs
+            ul.unstyled.indent
+                each tab in tabs
+                    li
+                        a(href="tab/#{tab._id}")  #{tab.artist} - #{tab.title}

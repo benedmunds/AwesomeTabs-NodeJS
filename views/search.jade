@@ -1,0 +1,8 @@
+div.content.no-hero
+    div.row
+        div.span12
+            h2 Results for "#{searched}"
+            ol.indent
+                each tab, i in tabs
+                    li
+                        a(href="tab/#{tab._id}")  #{tab.artist} - #{tab.title}
