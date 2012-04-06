@@ -30,14 +30,17 @@ app.get('/', function(req, res){
 
         //strip the " Tab" from the titles - clean the DB later to speed this up
         var tabs = [];
-        docs.forEach(function(tab){
-          tabs.push({
-            title: tab.title.replace(' Tab', ''),
-            artist: tab.artist,
-            created_on: tab.created_on,
-            _id: tab._id
+        if (docs !== undefined && docs.length > 0)
+        {
+          docs.forEach(function(tab){
+            tabs.push({
+              title: tab.title.replace(' Tab', ''),
+              artist: tab.artist,
+              created_on: tab.created_on,
+              _id: tab._id
+            });
           });
-        });
+        }
 
         //render the index page
         res.render('index.jade', { locals: {
