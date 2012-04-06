@@ -1,5 +1,5 @@
 var express = require('express');
-var TabProvider = require('./tabprovider-mongodb').TabProvider;
+var Tab = require(__dirname + '/models/tab').Tab;
 
 var app = module.exports = express.createServer();
 
@@ -21,7 +21,21 @@ app.configure('production', function(){
   app.use(express.errorHandler());
 });
 
-var tabProvider= new TabProvider('localhost', 27017);
+var tabProvider= new Tab({
+  host: 'flame.mongohq.com',
+  port: 27087,
+  db: 'app3708478',
+  username: 'awesometabs',
+  password: '377525'
+});
+
+
+/**
+ * 
+ * We'll keep it nice and simple with the routes all defined here
+ * in the future we might implement an MVC structure
+ *
+ **/
 
 app.get('/', function(req, res){
 
