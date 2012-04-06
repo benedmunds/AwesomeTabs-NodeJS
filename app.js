@@ -25,8 +25,8 @@ var tabProvider= new Tab({
   host: 'flame.mongohq.com',
   port: 27087,
   db: 'app3708478',
-  username: MONGO_USR,
-  password: MONGO_PASS
+  username: process.env.MONGO_USR,
+  password: process.env.MONGO_PASS
 });
 
 
